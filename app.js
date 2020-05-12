@@ -16,14 +16,17 @@ switch (comando) {
         console.log(tarea);
         break;
     case 'listar':
-        console.log('\n===   Mostrar todas las tareas    ==='.cyan, '\n');
+        console.log('\n=========   Mostrar todas las tareas    ========'.cyan, '\n');
         let listado = porHacer.getListado();
+        var i = 1;
         for (let tarea of listado) {
-            console.log('============ Por Hacer ==========='.green);
-            console.log(tarea.descripcion);
-            console.log('Estado: ', tarea.completado);
-            console.log('=================================='.green,'\n');
+            //console.log('============ Por Hacer ==========='.green);
+            console.log(i + ' --\t' + tarea.descripcion + '\t Estado: ' + tarea.completado + '\n');
+            //console.log('Estado: ', tarea.completado);
+            //console.log('=================================='.green,'\n');
+            i++;
         }
+        console.log('=================================================='.green,'\n');
         break;
     case 'actualizar':
         console.log('Actualizar tarea');
